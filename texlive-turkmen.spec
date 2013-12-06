@@ -6,7 +6,7 @@
 # catalog-version 0.2
 Name:		texlive-turkmen
 Version:	0.2
-Release:	4
+Release:	5
 Summary:	Babel support for Turkmen
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/turkmen
