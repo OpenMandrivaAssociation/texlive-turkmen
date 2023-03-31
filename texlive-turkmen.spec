@@ -1,6 +1,6 @@
 Name:		texlive-turkmen
 Version:	17748
-Release:	1
+Release:	2
 Summary:	Babel support for Turkmen
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/turkmen
