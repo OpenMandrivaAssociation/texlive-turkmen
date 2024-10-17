@@ -3,7 +3,7 @@ Version:	17748
 Release:	2
 Summary:	Babel support for Turkmen
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/language/turkmen
+URL:		https://www.ctan.org/tex-archive/language/turkmen
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/turkmen.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/turkmen.doc.r%{version}.tar.xz
