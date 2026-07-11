@@ -1,46 +1,22 @@
-Name:		texlive-turkmen
-Version:	17748
-Release:	2
+%global tl_name turkmen
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.2
+Release:	%{tl_revision}.1
 Summary:	Babel support for Turkmen
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/language/turkmen
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/turkmen.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/turkmen.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/turkmen.source.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/turkmen.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/turkmen.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/turkmen.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides support for Turkmen in babel, but
-integration with babel is not available.
+The package provides support for Turkmen in babel, but integration with
+babel is not available.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/turkmen/turkmen.ldf
-%doc %{_texmfdistdir}/doc/latex/turkmen/README
-%doc %{_texmfdistdir}/doc/latex/turkmen/turkmen.pdf
-#- source
-%doc %{_texmfdistdir}/source/latex/turkmen/turkmen.dtx
-%doc %{_texmfdistdir}/source/latex/turkmen/turkmen.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
